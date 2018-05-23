@@ -1,5 +1,4 @@
 <resources>
-  <string name="app_name">FlickrLookUp</string>
+  <string name="app_name">Flickr...</string>
   <string name="image_name">image</string>
-  <string name="api_key">4d3dc66ecc804befbd634493422c6cc1</string>
 </resources>

@@ -16,20 +16,10 @@ import java.util.List;
 
 public class FlckrAdapter extends RecyclerView.Adapter<FlckrAdapter.ImageHolder> {
 
-  private List<FlickrDataObject> mFlickrList = new ArrayList<>();
+  private List<Photo> mFlickrList = new ArrayList<>();
   private Context mContext;
 
-  public static class ImageHolder extends RecyclerView.ViewHolder {
-
-    public ImageView mImageView;
-
-    public ImageHolder(View itemView) {
-      super(itemView);
-      mImageView = itemView.findViewById(R.id.image);
-    }
-  }
-
-  public FlckrAdapter(List<FlickrDataObject> flickrList, Context context) {
+  public FlckrAdapter(List<Photo> flickrList, Context context) {
     mFlickrList = flickrList;
     mContext = context;
   }
@@ -42,7 +32,7 @@ public class FlckrAdapter extends RecyclerView.Adapter<FlckrAdapter.ImageHolder>
 
   @Override
   public void onBindViewHolder(ImageHolder holder, int position) {
-    FlickrDataObject flckrObj = mFlickrList.get(position);
+    Photo flckrObj = mFlickrList.get(position);
     String pictureUrl =
         "http://farm" + flckrObj.getFarm() + ".static.flickr.com/" + flckrObj.getServer() + "/"
             + flckrObj.getId() + "_" + flckrObj.getSecret() + ".jpg ";
@@ -54,5 +44,17 @@ public class FlckrAdapter extends RecyclerView.Adapter<FlckrAdapter.ImageHolder>
   @Override
   public int getItemCount() {
     return mFlickrList.size();
+  }
+
+  public static class ImageHolder extends RecyclerView.ViewHolder {
+
+    public ImageView mImageView;
+
+    public ImageHolder(View itemView) {
+      super(itemView);
+      mImageView = itemView.findViewById(R.id.image);
+      mImageView.getLayoutParams().width = (int) (itemView.getContext().getResources().getDisplayMetrics().widthPixels * 0.30);
+      mImageView.getLayoutParams().height = (int) (itemView.getContext().getResources().getDisplayMetrics().widthPixels * 0.30);
+    }
   }
 }
