@@ -1,19 +1,36 @@
 package com.mounica.flickrlookup;
 
-/**
- * Created by mounicachikkam on 4/9/18.
- */
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-public class FlickrDataObject {
+public class Photo {
 
+  @SerializedName("id")
+  @Expose
   private String id;
+  @SerializedName("owner")
+  @Expose
   private String owner;
+  @SerializedName("secret")
+  @Expose
   private String secret;
+  @SerializedName("server")
+  @Expose
   private String server;
+  @SerializedName("farm")
+  @Expose
   private int farm;
+  @SerializedName("title")
+  @Expose
   private String title;
+  @SerializedName("ispublic")
+  @Expose
   private int ispublic;
+  @SerializedName("isfriend")
+  @Expose
   private int isfriend;
+  @SerializedName("isfamily")
+  @Expose
   private int isfamily;
 
   public String getId() {
@@ -24,7 +41,7 @@ public class FlickrDataObject {
     this.id = id;
   }
 
-  public FlickrDataObject withId(String id) {
+  public Photo withId(String id) {
     this.id = id;
     return this;
   }
@@ -37,7 +54,7 @@ public class FlickrDataObject {
     this.owner = owner;
   }
 
-  public FlickrDataObject withOwner(String owner) {
+  public Photo withOwner(String owner) {
     this.owner = owner;
     return this;
   }
@@ -50,7 +67,7 @@ public class FlickrDataObject {
     this.secret = secret;
   }
 
-  public FlickrDataObject withSecret(String secret) {
+  public Photo withSecret(String secret) {
     this.secret = secret;
     return this;
   }
@@ -63,7 +80,7 @@ public class FlickrDataObject {
     this.server = server;
   }
 
-  public FlickrDataObject withServer(String server) {
+  public Photo withServer(String server) {
     this.server = server;
     return this;
   }
@@ -76,7 +93,7 @@ public class FlickrDataObject {
     this.farm = farm;
   }
 
-  public FlickrDataObject withFarm(int farm) {
+  public Photo withFarm(int farm) {
     this.farm = farm;
     return this;
   }
@@ -89,7 +106,7 @@ public class FlickrDataObject {
     this.title = title;
   }
 
-  public FlickrDataObject withTitle(String title) {
+  public Photo withTitle(String title) {
     this.title = title;
     return this;
   }
@@ -102,7 +119,7 @@ public class FlickrDataObject {
     this.ispublic = ispublic;
   }
 
-  public FlickrDataObject withIspublic(int ispublic) {
+  public Photo withIspublic(int ispublic) {
     this.ispublic = ispublic;
     return this;
   }
@@ -115,7 +132,7 @@ public class FlickrDataObject {
     this.isfriend = isfriend;
   }
 
-  public FlickrDataObject withIsfriend(int isfriend) {
+  public Photo withIsfriend(int isfriend) {
     this.isfriend = isfriend;
     return this;
   }
@@ -128,7 +145,7 @@ public class FlickrDataObject {
     this.isfamily = isfamily;
   }
 
-  public FlickrDataObject withIsfamily(int isfamily) {
+  public Photo withIsfamily(int isfamily) {
     this.isfamily = isfamily;
     return this;
   }
